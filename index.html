@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RentBD – Don't Buy It, Rent It</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="bar">
+    <a class="logo" href="#" data-go="home">🌿 RentBD</a>
+    <nav class="links">
+      <a href="#" data-go="handover" data-i="escrow">How Escrow Works</a>
+      <a href="#" data-go="dash" data-tab="Owner" data-i="list">List an Item (Earn Cash)</a>
+      <a href="#" data-go="dash" data-tab="SME" data-i="sme">SME Merchant Portal</a>
+    </nav>
+    <div class="right">
+      <div class="lang"><button data-lang="en" class="on">English</button><button data-lang="bn">বাংলা</button></div>
+      <div class="pill"><span class="av">SR</span>✔ Verified 4.9 ★</div>
+    </div>
+  </div>
+  <nav class="pages">
+    <button data-go="home" class="on" data-i="home">Home</button>
+    <button data-go="product" data-i="product">Product</button>
+    <button data-go="verify" data-i="verify">e-KYC</button>
+    <button data-go="handover" data-i="handover">Handover</button>
+    <button data-go="dash" data-i="dash">Dashboard</button>
+  </nav>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<section class="page active" id="p-home">
+  <div class="hero">
+    <h1 data-i="tagline">Don't Buy It, Rent It.</h1>
+    <p data-i="sub"></p>
+    <div class="search">
+      <label>🔍 <input id="q" data-ph="ph" placeholder="Search items…"></label>
+      <label>📍 <select id="loc"><option value="">All locations</option><option>Gulshan</option><option>Dhanmondi</option><option>Uttara</option><option>Banani</option><option>Sylhet</option><option>Chittagong</option></select></label>
+      <label>📅 <input type="date" id="sdate"></label>
+      <button class="cta" id="go" data-i="go">Search</button>
+    </div>
+    <div class="ticker"><i></i><span data-i="ticker"></span></div>
+  </div>
+  <div class="wrap">
+    <div class="trust">
+      <div>🪪<span data-i="t1"></span></div><div>🔒<span data-i="t2"></span></div>
+      <div>📜<span data-i="t3"></span></div><div>🛡️<span data-i="t4"></span></div>
+    </div>
+    <h2 data-i="cats"></h2><div class="cats" id="cats"></div>
+    <h2 data-i="feat"></h2><div class="grid2" id="listings"></div>
+    <div class="earn">
+      <h2 data-i="earn"></h2>
+      <div class="eg">
+        <div>
+          <label class="blk"><span data-i="eitem"></span><select id="eitem"></select></label>
+          <label class="blk"><b id="edv">3</b> <span data-i="edays"></span><input type="range" id="edays" min="1" max="7" value="3"></label>
+        </div>
+        <div class="eo"><small data-i="eout"></small><b id="eout"></b><small data-i="mo"></small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT ============ -->
+<section class="page" id="p-product">
+  <div class="wrap two">
+    <div>
+      <div class="gal"><div class="gmain" id="gmain"></div><button class="arr l" id="gprev" aria-label="Previous">‹</button><button class="arr r" id="gnext" aria-label="Next">›</button></div>
+      <div class="thumbs" id="thumbs"></div>
+      <h2 class="pt"><span id="ptitle"></span> <span class="tag" id="pcond"></span></h2>
+      <p class="muted" id="ploc"></p><p class="okt" id="pinc"></p>
+      <div class="card"><h3>Specifications</h3><ul class="specs" id="specs"></ul></div>
+      <div class="card owner">
+        <div class="avb">RA</div>
+        <div><b>Rafiq Ahmed</b> <span class="tag">✔ NID Verified</span>
+          <p class="muted">⭐ 4.9 · ⏱ Replies under 1 hour · 🏪 128 completed rentals</p></div>
+      </div>
+    </div>
+    <aside class="card book">
+      <p class="rate" id="prate"></p>
+      <div class="dates">
+        <label>Start<input type="date" id="bs"></label>
+        <label>End<input type="date" id="be"></label>
+      </div>
+      <div class="dlv">
+        <button class="on" data-dlv>🚶 Self Pickup</button>
+        <button data-dlv>🛵 Doorstep (Pathao/Paperfly)</button>
+      </div>
+      <label class="chk"><input type="checkbox" id="prot" checked> 🛡️ <span><b>Optional Damage Protection</b><small>Add-on · ৳300</small></span></label>
+      <div class="rows">
+        <div class="row"><span id="l-base"></span><b id="v-base"></b></div>
+        <div class="row"><span>Platform Convenience Fee (5%)</span><b id="v-fee"></b></div>
+        <div class="row" id="row-prot"><span>Damage Protection Add-on</span><b id="v-prot"></b></div>
+        <div class="row mu"><span>Security Deposit Hold (Refundable)</span><b id="v-dep"></b></div>
+        <div class="row tot"><span>TOTAL PAYABLE AT CHECKOUT</span><b id="v-tot"></b></div>
+      </div>
+      <button class="cta full desk" id="reqbook">Request to Book</button>
+      <p class="pay">Pay with bKash · Nagad · Rocket · Visa/Mastercard. Held in escrow.</p>
+    </aside>
+    <div class="mbar"><div><small>Total</small><b id="m-tot"></b></div><button class="cta" id="mbook">Book Now</button></div>
+  </div>
+</section>
+
+<!-- ============ VERIFY ============ -->
+<section class="page" id="p-verify">
+  <div class="wrap center">
+    <h2>Trust &amp; Safety</h2>
+    <p class="muted">Verify your identity once to rent or list high-value items.</p>
+    <button class="cta" id="openkyc">🛡️ Verify My Identity</button>
+  </div>
+</section>
+
+<!-- ============ HANDOVER ============ -->
+<section class="page" id="p-handover">
+  <div class="wrap narrow">
+    <h2>Handover &amp; Inspection</h2>
+    <p class="muted">Sony A7 III + 28-70mm Lens · Sabbir R. ⇄ Rafiq Ahmed</p>
+    <ol class="steps big" id="hsteps"><li class="now">1</li><li>2</li></ol>
+    <div class="card" id="h1">
+      <p class="muted">Upload <b>3 photos</b> or a <b>10-second video</b> of the item's condition before handover.</p>
+      <div class="slots">
+        <label class="slot" data-t="📷 Photo 1"><input type="file" accept="image/*" data-p="0" hidden><span>📷 Photo 1</span></label>
+        <label class="slot" data-t="📷 Photo 2"><input type="file" accept="image/*" data-p="1" hidden><span>📷 Photo 2</span></label>
+        <label class="slot" data-t="📷 Photo 3"><input type="file" accept="image/*" data-p="2" hidden><span>📷 Photo 3</span></label>
+      </div>
+      <p class="or">OR</p>
+      <label class="up"><span data-t="🎥 Record / upload 10-second video">🎥 Record / upload 10-second video</span><input type="file" accept="video/*" id="hvid" hidden></label>
+      <p class="muted" id="hcount">0/3 photos added</p>
+      <button class="cta full" id="hnext" disabled>Continue to PIN handover</button>
+    </div>
+    <div class="card" id="h2" hidden>
+      <p class="muted">Meet in person. Each of you shows your PIN and types in the other's. When both match, escrow unlocks.</p>
+      <div class="pins">
+        <div class="pc" id="pc-r"><small>RENTER · Sabbir R.</small><div class="tiles" id="pin-r"></div><label>Enter owner's PIN<input id="h-r" inputmode="numeric" maxlength="4" placeholder="••••"></label><p class="msg" id="m-r"></p></div>
+        <div class="pc" id="pc-o"><small>OWNER · Rafiq Ahmed</small><div class="tiles" id="pin-o"></div><label>Enter renter's PIN<input id="h-o" inputmode="numeric" maxlength="4" placeholder="••••"></label><p class="msg" id="m-o"></p></div>
+      </div>
+      <div class="hf"><button class="ghost" id="hback">← Back</button><button class="ghost" id="hnew">🔄 New PINs</button></div>
+    </div>
+    <div class="escrow" id="escrow"><span id="e-ic">🔒</span><div><b id="e-t">Escrow locked</b><p id="e-d">৳11,175 is held safely until handover is confirmed.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD ============ -->
+<section class="page" id="p-dash">
+  <div class="wrap narrow">
+    <h2>My Dashboard</h2>
+    <div class="seg" id="dtabs"><button data-dt="Renter" class="on">Renter</button><button data-dt="Owner">Owner</button><button data-dt="SME">SME Merchant</button></div>
+
+    <div class="dp" id="d-Renter">
+      <div class="stats"><div class="st"><small>Active rentals</small><b>2</b></div><div class="st"><small>Deposits in escrow</small><b>৳4,000</b></div><div class="st"><small>Past bookings</small><b>2</b></div></div>
+      <div class="card"><h3>Active rentals</h3>
+        <div class="li"><div><b>Sony A7 III + Lens</b><small>Return by Oct 2, 6:00 PM</small></div><div class="ra"><span class="okt">⏱ 3 days left</span><small>🔒 Escrow Held · ৳3,000</small></div></div>
+        <div class="li"><div><b>Camping Tent (4P)</b><small>Return by Oct 1, 10:00 AM</small></div><div class="ra"><span class="warn">⏱ Due tomorrow</span><small>🔒 Escrow Held · ৳1,000</small></div></div>
+      </div>
+      <div class="card"><h3>Past bookings</h3>
+        <div class="li"><span>Bridal Saree <small>· Sep 12</small></span><span>৳3,500 <small class="okt">Deposit refunded</small></span></div>
+        <div class="li"><span>Power Drill Set <small>· Aug 28</small></span><span>৳500 <small class="okt">Deposit refunded</small></span></div>
+      </div>
+    </div>
+
+    <div class="dp" id="d-Owner" hidden>
+      <div class="stats"><div class="st"><small>Total earnings</small><b>৳96,200</b></div><div class="st"><small>Listed items</small><b>6</b></div><div class="st"><small>Wallet balance</small><b class="bal">৳18,450</b></div></div>
+      <div class="two2">
+        <div class="card"><h3>Payout wallet</h3>
+          <div class="dlv"><button class="on" data-m="bKash">bKash</button><button data-m="Nagad">Nagad</button></div>
+          <input id="wamt" inputmode="numeric" placeholder="Amount (৳)" class="inp">
+          <button class="cta full" id="wbtn">Withdraw to bKash</button>
+          <p class="msg" id="wmsg"></p>
+        </div>
+        <div class="card"><h3>Incoming requests (<span id="rqn">2</span>)</h3>
+          <div class="li rq"><div><b>Sony A7 III · Oct 5–8</b><small>Sabbir R. · ৳11,175</small></div><div><button class="rb ok" data-req>✓</button><button class="rb" data-req>✕</button></div></div>
+          <div class="li rq"><div><b>DJI Mavic 3 · Oct 10–11</b><small>Mim A. · ৳8,400</small></div><div><button class="rb ok" data-req>✓</button><button class="rb" data-req>✕</button></div></div>
+          <p class="muted" id="rqnone" hidden>No pending requests.</p>
+        </div>
+      </div>
+      <div class="card"><h3>Listed items</h3><div class="chips"><span>📷 Sony A7 III · ৳2,500/day</span><span>🚁 DJI Mavic 3 · ৳4,000/day</span><span>💡 Godox Studio Light · ৳800/day</span></div></div>
+      <div class="card"><h3>Damage claim</h3>
+        <div id="cform">
+          <select id="cbook" class="inp"><option value="">Select completed booking</option><option>Sony A7 III · Sep 20–23</option><option>DJI Mavic 3 · Sep 1–3</option></select>
+          <textarea id="ctext" class="inp" rows="3" placeholder="Describe the damage (min 10 characters)…"></textarea>
+          <button class="cta" id="cbtn" disabled>Submit claim</button>
+        </div>
+        <p class="okt" id="cdone" hidden>✔ Claim submitted. Our team will review the handover photos within 48 hours.</p>
+      </div>
+    </div>
+
+    <div class="dp" id="d-SME" hidden>
+      <div class="sub"><span>👑</span><div><b>Merchant Pro · ৳1,500/month</b><p>Renews Oct 28 · Unlimited listings · 3 featured slots</p></div><em>Active</em></div>
+      <div class="card"><h3>Bulk inventory upload</h3>
+        <label class="up"><span data-t="⬆ Upload CSV / Excel (title, category, daily rate)">⬆ Upload CSV / Excel (title, category, daily rate)</span><input type="file" accept=".csv,.xlsx" id="bulk" hidden></label></div>
+      <div class="card"><h3>Featured listing manager</h3>
+        <label class="li"><span>Studio Lighting Kit</span><input type="checkbox" checked></label>
+        <label class="li"><span>Groom Sherwani</span><input type="checkbox"></label>
+        <label class="li"><span>Generator 5kVA</span><input type="checkbox"></label>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="logos"><span style="background:#E2136E">bKash</span><span style="background:#F6921E">Nagad</span><span style="background:#8C3494">Rocket</span><span style="background:#1E293B">Visa / Mastercard</span></div>
+  © 2026 RentBD
+</footer>
+
+<!-- ============ e-KYC MODAL ============ -->
+<div class="modal" id="kyc" hidden>
+  <div class="sheet">
+    <button class="x" id="kx" aria-label="Close">✕</button>
+    <h3>Verify your identity (e-KYC)</h3>
+    <ol class="steps" id="ksteps"><li>1</li><li>2</li><li>3</li><li>4</li></ol>
+    <div id="kbody">
+      <div class="kp" data-k="0">
+        <div class="fld"><label>Mobile number</label><div class="pg"><span>+880</span><input id="k-ph" inputmode="tel" placeholder="1XXX-XXXXXX"></div><small class="err">Enter a valid BD number, e.g. 1712-345678</small></div>
+        <div class="fld"><label>NID number</label><input id="k-nid" inputmode="numeric" maxlength="17" placeholder="10, 13 or 17 digits"><small class="err">NID must be 10, 13 or 17 digits</small></div>
+        <div class="two3">
+          <label class="up"><span data-t="⬆ NID front">⬆ NID front</span><input type="file" accept="image/*" data-f="front" hidden></label>
+          <label class="up"><span data-t="⬆ NID back">⬆ NID back</span><input type="file" accept="image/*" data-f="back" hidden></label>
+        </div>
+      </div>
+      <div class="kp" data-k="1" hidden>
+        <p class="muted">Take a clear selfie in good light. Face the camera and remove glasses or a mask.</p>
+        <label class="up"><span data-t="🤳 Tap to take / upload selfie">🤳 Tap to take / upload selfie</span><input type="file" accept="image/*" capture="user" data-f="selfie" hidden></label>
+      </div>
+      <div class="kp" data-k="2" hidden>
+        <p class="muted">Optional, but required to rent high-value items (cameras, drones, generators).</p>
+        <div class="fld"><label>Facebook or LinkedIn profile</label><input id="k-soc" placeholder="https://facebook.com/yourname"><small class="err">Paste a full facebook.com or linkedin.com profile link</small></div>
+      </div>
+      <div class="kp" data-k="3" hidden>
+        <div class="contract">This Digital Rental Contract is an electronic record under the Information &amp; Communication Technology Act. By e-signing you agree to return items in the agreed condition and on time, and accept that deposits may be applied to verified damage claims.</div>
+        <label class="chk"><input type="checkbox" id="k-consent"> <span>I agree to e-sign the legal rental contract.</span></label>
+      </div>
+    </div>
+    <div class="kdone" id="kdone" hidden><div class="big">✅</div><b>Submitted for review</b><p class="muted">Most verifications finish within 30 minutes.</p><button class="cta" id="kfin">Done</button></div>
+    <div class="kfoot" id="kfoot"><button class="ghost" id="kback">Back</button><button class="cta" id="knext" disabled>Continue</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
